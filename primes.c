@@ -8,5 +8,9 @@
 
 int main() {
 
-    return EXIT_SUCCESS;
+    bitset_create(pole, 100);
+
+    Eratosthenes(pole);
+
+    return 0;
 }

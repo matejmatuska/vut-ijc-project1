@@ -1,13 +1,17 @@
-CFLAGS= -std=c11 -pedantic -Wall -Wextra -g
+CFLAGS= -std=c11 -pedantic -Wall -Wextra -g -lm
 
-all: bitset
+all: primes
 
-bitset: bitset.o
+primes: primes.o eratosthenes.o
+	$(CC) $(CFLAGS) $^ -o $@
 
-bitset.o: bitset.c bitset.h
+primes.o: primes.c eratosthenes.h bitset.h
 
-run: bitset
-	./bitset
+eratosthenes.o: eratosthenes.c eratosthenes.h bitset.h
+
+
+run: primes
+	./primes
 
 clean:
-	rm bitset bitset.o
+	rm primes primes.o eratosthenes.o
