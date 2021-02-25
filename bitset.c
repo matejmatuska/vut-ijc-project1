@@ -52,12 +52,14 @@ void bitset_set(bitset_t *set, bitset_index_t i, int exp) {
 
 int main() {
 
-    bitset_alloc(set, 100);
-    set.set[0] = 0;
-    set.set[1] = 0;
+    bitset_create(set, 200000000);
 
-    printf("%d\n", set.set[0]);
-    printf("%d\n", set.set[1]);
+    printf("Size = %lu\n", bitset_size(set));
+    set[1] = 0;
+    set[2] = 1;
+
+    printf("%lu\n", set[1]);
+    printf("%lu\n", set[2]);
 
     for (int i = 0; i < 16; i++) {
         if (i % 2 == 0) {
@@ -65,15 +67,17 @@ int main() {
         }
     }
 
-    printf("%d\n", set.set[0]);
-    printf("%d\n", set.set[1]);
+    printf("%lu\n", set[1]);
+    printf("%lu\n", set[2]);
 
     for (int i = 0; i < 16; i++) {
         int val = bitset_getbit(set, i);
         printf("%d", val);
     }
+    printf("Size = %lu\n", bitset_size(set));
 
-    bitset_free(set)
+    //bitset_free(set)
+
 
     return 0;
 }
