@@ -1,5 +1,5 @@
-#ifndef _ERATOSTHENES_h_
-#define _ERATOSTHENES_h_
+#ifndef _ERATOSTHENES_H_
+#define _ERATOSTHENES_H_
 
 #include "bitset.h"
 
