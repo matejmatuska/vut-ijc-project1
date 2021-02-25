@@ -12,5 +12,7 @@ int main() {
 
     Eratosthenes(pole);
 
+    //bitset_free(pole);
+
     return 0;
 }
