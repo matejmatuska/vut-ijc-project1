@@ -16,7 +16,7 @@ typedef unsigned long bitset_index_t;
 
 //TODO error handling
 #define bitset_alloc(jmeno_pole, velikost) \
-    unsigned long *(jmeno_pole) = malloc(sizeof(unsigned long) * (2 + ((velikost) / UL_BITS))); \
+    unsigned long *(jmeno_pole) = calloc((2 + ((velikost) / UL_BITS)), sizeof(unsigned long)); \
     if ((jmeno_pole) == NULL) { \
         exit(EXIT_FAILURE); \
     } \
@@ -47,7 +47,7 @@ typedef unsigned long bitset_index_t;
 //#ifdef USE_INLINE
   //  #define TODO
 //#else
-
+/*
 #define bitset_setbit(jmeno_pole, index, vyraz) \
         unsigned long byte = ((index) / UL_BITS) + 1; \
         int bit = (index) % UL_BITS; \
@@ -58,15 +58,15 @@ typedef unsigned long bitset_index_t;
             mask = ~mask; \
             (jmeno_pole)[byte] &= mask; \
         } \
-
-/*
- #define bitset_setbit(jmeno_pole, index, vyraz) \
-        if (vyraz) { \
-            (jmeno_pole)[(index) / UL_BITS + 1] |= (1 << (UL_BITS - (index) % UL_BITS - 1)); \
-        } else { \
-            (jmeno_pole)[(index) / UL_BITS + 1] &= ~(1 << (UL_BITS - (index) % UL_BITS - 1)); \
-        } \
 */
+
+
+#define bitset_setbit(jmeno_pole, index, vyraz) \
+        if (vyraz) { \
+            (jmeno_pole)[(index) / UL_BITS + 1] |= (1UL << (UL_BITS - (index) % UL_BITS - 1)); \
+        } else { \
+            (jmeno_pole)[(index) / UL_BITS + 1] &= ~(1UL << (UL_BITS - (index) % UL_BITS - 1)); \
+        } \
 //#endif
 
 #ifdef USE_INLINE
