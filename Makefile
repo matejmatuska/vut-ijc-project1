@@ -1,4 +1,4 @@
-CFLAGS= -std=c11 -pedantic -Wall -Wextra -g -lm
+CFLAGS= -std=c11 -pedantic -Wall -Wextra -lm
 
 all: primes
 
@@ -9,6 +9,7 @@ primes.o: primes.c eratosthenes.h bitset.h
 
 eratosthenes.o: eratosthenes.c eratosthenes.h bitset.h
 
+error.o: error.c error.h
 
 run: primes
 	./primes
