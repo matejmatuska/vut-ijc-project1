@@ -24,12 +24,16 @@ int main() {
     bitset_index_t index = N - 1;
     int k = 0;
     while (k < 10 && index > 0) {
-        int val = bitset_getbit(pole, index);
-        if (!val) {
-            printf("%lu\n", index);
+        if (!bitset_getbit(pole, index)) {
             k++;
         }
         index--;
+    }
+    while (index < N - 1) {
+        if (!bitset_getbit(pole, index)) {
+            printf("%lu\n", index);
+        }
+        index++;
     }
 
     fprintf(stderr, "Time=%.3g\n", (double)(clock()-start)/CLOCKS_PER_SEC);
