@@ -1,6 +1,12 @@
+// ppm.h
+// Řešení IJC-DU1, příklad b), 28.2.2021
+// Autor: Matej Matuška, FIT
+// Přeloženo: gcc 10.2.1
+
 #ifndef _PPM_H_
 #define _PPM_H_
 
+// holds PPM data
 struct ppm {
     unsigned xsize;
     unsigned ysize;

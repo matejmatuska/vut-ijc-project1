@@ -25,7 +25,7 @@ error.o: error.c error.h
 
 steg-decode: steg-decode.o ppm.o error.o eratosthenes.o
 
-ppm.o: ppm.c ppm.h
+ppm.o: ppm.c ppm.h error.h
 
 run: primes primes-i
 	./primes

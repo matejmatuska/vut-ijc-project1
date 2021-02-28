@@ -1,8 +1,8 @@
 // steg-decode.c
-// Řešení IJC-DU1, příklad b), 27.2.2021
+// Řešení IJC-DU1, příklad b), 28.2.2021
 // Autor: Matej Matuška, FIT
 // Přeloženo: gcc 10.2.1
-// ...popis příkladu - poznámky, omezení, atd
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -15,13 +15,12 @@
 int main(int argc, char *argv[]) {
 
     if (argc != 2) {
-        fprintf(stderr, "Expected one argument!\n");
-        return EXIT_FAILURE;
+        error_exit("Ocakavany jeden argument\n");
     }
 
     struct ppm *ppm = ppm_read(argv[1]);
     if (ppm == NULL) {
-        return EXIT_FAILURE;
+        error_exit("Nepodarilo sa nacitat subor\n");
     }
 
     unsigned long size = 3 * ppm->xsize * ppm->ysize;
@@ -60,6 +59,5 @@ int main(int argc, char *argv[]) {
 
     bitset_free(arr);
     ppm_free(ppm);
-    //TODO error
-    return EXIT_FAILURE;
+    error_exit("Sprava nie je korektne ukoncena\n");
 }

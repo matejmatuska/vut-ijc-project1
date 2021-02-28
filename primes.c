@@ -1,3 +1,8 @@
+// primes.c
+// Řešení IJC-DU1, příklad a), 28.2.2021
+// Autor: Matej Matuška, FIT
+// Přeloženo: gcc 10.2.1
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -16,7 +21,7 @@ int main() {
     Eratosthenes(pole);
 
     // print primes
-    bitset_index_t index = N - 1; // TODO nie N?
+    bitset_index_t index = N - 1;
     int k = 0;
     while (k < 10 && index > 0) {
         int val = bitset_getbit(pole, index);
@@ -26,7 +31,7 @@ int main() {
         }
         index--;
     }
-    fprintf(stderr, "Time=%.3g\n", (double)(clock()-start)/CLOCKS_PER_SEC);
 
+    fprintf(stderr, "Time=%.3g\n", (double)(clock()-start)/CLOCKS_PER_SEC);
     return EXIT_SUCCESS;
 }

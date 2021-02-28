@@ -1,3 +1,8 @@
+// ppm.c
+// Řešení IJC-DU1, příklad b), 28.2.2021
+// Autor: Matej Matuška, FIT
+// Přeloženo: gcc 10.2.1
+
 #include <stdio.h>
 #include <stdlib.h>
 
