@@ -8,9 +8,12 @@ void Eratosthenes(bitset_t pole) {
     //TODO check size
     unsigned long sr = sqrt(N);
 
-    for (bitset_index_t i = 2; i < sr; i++) {
+    bitset_setbit(pole, 0, 1);
+    bitset_setbit(pole, 1, 1);
+
+    for (bitset_index_t i = 2; i <= sr; i++) {
         if (!bitset_getbit(pole, i)) {
-            for (bitset_index_t j = i; j < N; j+=i) {
+            for (bitset_index_t j = i+i; j < N; j+=i) {
                 bitset_setbit(pole, j, 1);
             }
         }
