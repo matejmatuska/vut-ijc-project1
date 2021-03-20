@@ -13,8 +13,8 @@ struct ppm {
     char data[]; //RGB bytes, 3*xsize*ysize in total
 };
 
-// reads the contents of PPM file
-// returns NULL in case of error
+// reads and returns the contents of PPM file,
+// in case of error prints warning and returns NULL
 struct ppm *ppm_read(const char *filename);
 
 // frees memory dynamically allocated in ppm_read

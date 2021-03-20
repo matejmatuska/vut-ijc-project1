@@ -8,9 +8,6 @@
 #include "eratosthenes.h"
 #include "bitset.h"
 
-// eratosthenove sito
-// po vrateni funkcie budu v bitovom poli "pole"
-// na indexoch prvocisel nastavene jednotlive bity na hodnotu "0"
 void Eratosthenes(bitset_t pole) {
     unsigned long N = bitset_size(pole);
     unsigned long sroot = sqrt(N);

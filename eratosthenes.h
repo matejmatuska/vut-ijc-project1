@@ -8,6 +8,9 @@
 
 #include "bitset.h"
 
+// The sieve of Eratostenes
+// after this function returns bits in bitset "pole"
+// at prime indices are set to 0, otherwise 1
 void Eratosthenes(bitset_t pole);
 
 #endif

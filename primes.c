@@ -36,6 +36,6 @@ int main() {
         index++;
     }
 
-    fprintf(stderr, "Time=%.3g\n", (double)(clock()-start)/CLOCKS_PER_SEC);
+    fprintf(stderr, "Time=%.3g\n", (double) (clock() - start) / CLOCKS_PER_SEC);
     return EXIT_SUCCESS;
 }

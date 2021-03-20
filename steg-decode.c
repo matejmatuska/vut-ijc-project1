@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
 
     bitset_index_t i = 23;
     unsigned char ch = 0;
-    int bit_i = 0;
+    int bit_i = 0; // index of bits in chars
 
     while (i < size) {
         if (!bitset_getbit(arr, i)) {
@@ -43,6 +43,7 @@ int main(int argc, char *argv[]) {
             }
             bit_i++;
 
+            // we have whole byte
             if (bit_i == CHAR_BIT) {
                 putchar(ch);
                 if (ch == '\0') {

@@ -10,7 +10,7 @@
 #include "error.h"
 
 void warning_msg(const char *fmt, ...) {
-    fprintf(stderr, "Chyba: ");
+    fprintf(stderr, "CHYBA: ");
     va_list args;
     va_start(args, fmt);
     vfprintf(stderr, fmt, args);
@@ -18,7 +18,7 @@ void warning_msg(const char *fmt, ...) {
 }
 
 void error_exit(const char *fmt, ...) {
-    fprintf(stderr, "Chyba: ");
+    fprintf(stderr, "CHYBA: ");
     va_list args;
     va_start(args, fmt);
     vfprintf(stderr, fmt, args);
