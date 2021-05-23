@@ -11,7 +11,7 @@
 
 struct ppm *ppm_read(const char *filename) {
 
-    FILE *f = fopen(filename, "r");
+    FILE *f = fopen(filename, "rb");
     if (f == NULL) {
         warning_msg("Error failed to load ppm file\n");
         return NULL;
@@ -63,7 +63,7 @@ struct ppm *ppm_read(const char *filename) {
     int count = fread(ppm->data, 1, 3 * width * height, f);
     if (count != 3 * width * height) {
         warning_msg("Error: Failed to load ppm data\n");
-        free(ppm);
+        ppm_free(ppm);
         fclose(f);
         return NULL;
     }
